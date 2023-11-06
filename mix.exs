@@ -4,7 +4,7 @@ defmodule MicrosoftGraph.Mixfile do
   def project do
     [
       app: :microsoft_graph,
-      version: "v1.0",
+      version: "0.1.0",
       elixir: "~> 1.10",
       build_embedded: Mix.env() == :prod,
       start_permanent: Mix.env() == :prod,
