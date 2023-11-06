@@ -18,7 +18,7 @@ your list of dependencies in `mix.exs`:
 
 ```elixir
 def deps do
-  [{:microsoft_graph, "~> v1.0"}]
+  [{:microsoft_graph, "~> 0.1"}]
 end
 ```
 
