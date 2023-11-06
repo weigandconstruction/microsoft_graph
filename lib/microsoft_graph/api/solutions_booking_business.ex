@@ -663,7 +663,7 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:error, Tesla.Env.t}` on failure
   """
   @spec solutions_booking_businesses_get_calendar_view(Tesla.Env.client, String.t, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointment.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_get_calendar_view(connection, booking_business_id, booking_appointment_id, start, end, opts \\ []) do
+  def solutions_booking_businesses_get_calendar_view(connection, booking_business_id, booking_appointment_id, start, end_, opts \\ []) do
     optional_params = %{
       :"$select" => :query,
       :"$expand" => :query
@@ -674,7 +674,7 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
       |> method(:get)
       |> url("/solutions/bookingBusinesses/#{booking_business_id}/calendarView/#{booking_appointment_id}")
       |> add_param(:query, :start, start)
-      |> add_param(:query, :end, end)
+      |> add_param(:query, :end, end_)
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 
@@ -967,7 +967,7 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
   - `{:error, Tesla.Env.t}` on failure
   """
   @spec solutions_booking_businesses_list_calendar_view(Tesla.Env.client, String.t, String.t, String.t, keyword()) :: {:ok, MicrosoftGraph.Model.MicrosoftGraphBookingAppointmentCollectionResponse.t} | {:ok, MicrosoftGraph.Model.MicrosoftGraphODataErrorsODataError.t} | {:error, Tesla.Env.t}
-  def solutions_booking_businesses_list_calendar_view(connection, booking_business_id, start, end, opts \\ []) do
+  def solutions_booking_businesses_list_calendar_view(connection, booking_business_id, start, end_, opts \\ []) do
     optional_params = %{
       :"$top" => :query,
       :"$skip" => :query,
@@ -984,7 +984,7 @@ defmodule MicrosoftGraph.Api.SolutionsBookingBusiness do
       |> method(:get)
       |> url("/solutions/bookingBusinesses/#{booking_business_id}/calendarView")
       |> add_param(:query, :start, start)
-      |> add_param(:query, :end, end)
+      |> add_param(:query, :end, end_)
       |> add_optional_params(optional_params, opts)
       |> Enum.into([])
 

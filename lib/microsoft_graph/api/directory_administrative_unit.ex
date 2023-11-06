@@ -191,7 +191,7 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   - `directory_object_id` (String.t): The unique identifier of directoryObject
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -202,7 +202,7 @@ defmodule MicrosoftGraph.Api.DirectoryAdministrativeUnit do
   def directory_administrative_units_delete_ref_members(connection, administrative_unit_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

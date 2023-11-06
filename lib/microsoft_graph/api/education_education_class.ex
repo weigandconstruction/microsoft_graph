@@ -239,7 +239,7 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `education_category_id` (String.t): The unique identifier of educationCategory
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -250,7 +250,7 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   def education_classes_assignments_delete_ref_categories(connection, education_class_id, education_assignment_id, education_category_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
@@ -2101,7 +2101,7 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `education_user_id` (String.t): The unique identifier of educationUser
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -2112,7 +2112,7 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   def education_classes_delete_ref_members(connection, education_class_id, education_user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
@@ -2142,7 +2142,7 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   - `education_user_id` (String.t): The unique identifier of educationUser
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -2153,7 +2153,7 @@ defmodule MicrosoftGraph.Api.EducationEducationClass do
   def education_classes_delete_ref_teachers(connection, education_class_id, education_user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

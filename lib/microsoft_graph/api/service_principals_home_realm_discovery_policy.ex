@@ -54,7 +54,7 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
   - `home_realm_discovery_policy_id` (String.t): The unique identifier of homeRealmDiscoveryPolicy
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -65,7 +65,7 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsHomeRealmDiscoveryPolicy do
   def service_principals_delete_ref_home_realm_discovery_policies(connection, service_principal_id, home_realm_discovery_policy_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

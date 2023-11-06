@@ -1193,7 +1193,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   - `access_package_id1` (String.t): The unique identifier of accessPackage
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -1204,7 +1204,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   def identity_governance_entitlement_management_access_packages_delete_ref_incompatible_access_packages(connection, access_package_id, access_package_id1, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
@@ -1234,7 +1234,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   - `group_id` (String.t): The unique identifier of group
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -1245,7 +1245,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   def identity_governance_entitlement_management_access_packages_delete_ref_incompatible_groups(connection, access_package_id, group_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
@@ -10348,7 +10348,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   - `directory_object_id` (String.t): The unique identifier of directoryObject
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -10359,7 +10359,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   def identity_governance_entitlement_management_connected_organizations_delete_ref_external_sponsors(connection, connected_organization_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
@@ -10389,7 +10389,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   - `directory_object_id` (String.t): The unique identifier of directoryObject
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -10400,7 +10400,7 @@ defmodule MicrosoftGraph.Api.IdentityGovernanceEntitlementManagement do
   def identity_governance_entitlement_management_connected_organizations_delete_ref_internal_sponsors(connection, connected_organization_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

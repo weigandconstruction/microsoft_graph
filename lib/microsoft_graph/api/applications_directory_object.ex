@@ -54,7 +54,7 @@ defmodule MicrosoftGraph.Api.ApplicationsDirectoryObject do
   - `directory_object_id` (String.t): The unique identifier of directoryObject
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -65,7 +65,7 @@ defmodule MicrosoftGraph.Api.ApplicationsDirectoryObject do
   def applications_delete_ref_owners(connection, application_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

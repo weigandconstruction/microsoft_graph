@@ -198,7 +198,7 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   - `directory_object_id` (String.t): The unique identifier of directoryObject
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -209,7 +209,7 @@ defmodule MicrosoftGraph.Api.PoliciesFeatureRolloutPolicy do
   def policies_feature_rollout_policies_delete_ref_applies_to(connection, feature_rollout_policy_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

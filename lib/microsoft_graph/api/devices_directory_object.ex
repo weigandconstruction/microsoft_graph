@@ -88,7 +88,7 @@ defmodule MicrosoftGraph.Api.DevicesDirectoryObject do
   - `directory_object_id` (String.t): The unique identifier of directoryObject
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -99,7 +99,7 @@ defmodule MicrosoftGraph.Api.DevicesDirectoryObject do
   def devices_delete_ref_registered_owners(connection, device_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
@@ -129,7 +129,7 @@ defmodule MicrosoftGraph.Api.DevicesDirectoryObject do
   - `directory_object_id` (String.t): The unique identifier of directoryObject
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -140,7 +140,7 @@ defmodule MicrosoftGraph.Api.DevicesDirectoryObject do
   def devices_delete_ref_registered_users(connection, device_id, directory_object_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

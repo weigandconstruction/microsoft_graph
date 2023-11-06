@@ -54,7 +54,7 @@ defmodule MicrosoftGraph.Api.ApplicationsTokenIssuancePolicy do
   - `token_issuance_policy_id` (String.t): The unique identifier of tokenIssuancePolicy
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -65,7 +65,7 @@ defmodule MicrosoftGraph.Api.ApplicationsTokenIssuancePolicy do
   def applications_delete_ref_token_issuance_policies(connection, application_id, token_issuance_policy_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

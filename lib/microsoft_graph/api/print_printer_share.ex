@@ -658,7 +658,7 @@ defmodule MicrosoftGraph.Api.PrintPrinterShare do
   - `group_id` (String.t): The unique identifier of group
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -669,7 +669,7 @@ defmodule MicrosoftGraph.Api.PrintPrinterShare do
   def print_shares_delete_ref_allowed_groups(connection, printer_share_id, group_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
@@ -699,7 +699,7 @@ defmodule MicrosoftGraph.Api.PrintPrinterShare do
   - `user_id` (String.t): The unique identifier of user
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -710,7 +710,7 @@ defmodule MicrosoftGraph.Api.PrintPrinterShare do
   def print_shares_delete_ref_allowed_users(connection, printer_share_id, user_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

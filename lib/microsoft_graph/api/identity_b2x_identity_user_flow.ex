@@ -344,7 +344,7 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   - `identity_provider_base_id` (String.t): The unique identifier of identityProviderBase
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -355,7 +355,7 @@ defmodule MicrosoftGraph.Api.IdentityB2xIdentityUserFlow do
   def identity_b2x_user_flows_delete_ref_user_flow_identity_providers(connection, b2x_identity_user_flow_id, identity_provider_base_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

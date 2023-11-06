@@ -93,7 +93,7 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
   - `claims_mapping_policy_id` (String.t): The unique identifier of claimsMappingPolicy
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -104,7 +104,7 @@ defmodule MicrosoftGraph.Api.ServicePrincipalsClaimsMappingPolicy do
   def service_principals_delete_ref_claims_mapping_policies(connection, service_principal_id, claims_mapping_policy_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =

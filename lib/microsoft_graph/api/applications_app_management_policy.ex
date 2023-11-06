@@ -93,7 +93,7 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
   - `app_management_policy_id` (String.t): The unique identifier of appManagementPolicy
   - `opts` (keyword): Optional parameters
     - `:"If-Match"` (String.t): ETag
-    - `:@id` (String.t): Delete Uri
+    - `:"@id"` (String.t): Delete Uri
 
   ### Returns
 
@@ -104,7 +104,7 @@ defmodule MicrosoftGraph.Api.ApplicationsAppManagementPolicy do
   def applications_delete_ref_app_management_policies(connection, application_id, app_management_policy_id, opts \\ []) do
     optional_params = %{
       :"If-Match" => :headers,
-      :@id => :query
+      :"@id" => :query
     }
 
     request =
