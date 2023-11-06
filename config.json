@@ -1,0 +1,5 @@
+{
+  "invokerPackage": "MicrosoftGraph",
+  "packageName": "microsoft_graph",
+  "allowUnicodeIdentifiers": true
+}
